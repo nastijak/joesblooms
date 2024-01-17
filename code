@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodiversity Net Gain Application</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="countyQuestion">
+    <label for="county">What county is your development based in?</label>
+    <button type="button" onclick="showEnglandQuestion()">England</button>
+    <button type="button" onclick="showExemptMessage()">Scotland</button>
+    <button type="button" onclick="showExemptMessage()">Wales</button>
+    <button type="button" onclick="showExemptMessage()">Northern Ireland</button>
+</div>
+
+<div id="englandQuestion" class="hidden">
+    <label for="applicationType">What sort of planning application are you making?</label>
+   <button type="button" onclick="showHouseholderExempt()">Householder Application</button>
+    <button type="button" onclick="showResidentialMixedDevelopmentQuestion()">Residential Development</button>
+    <button type="button" onclick="showMoreQuestion()">More</button>
+    <button type="button" onclick="showChargeOfUseQuestion()">Charge of Use</button>
+    <button id="resetButton" onclick="resetForm()">Reset</button>
+</div>
+
+<div id="moreQuestion" class="hidden">
+    <label for="planningApplicationType">What sort of planning application are you making?</label>
+    <button type="button" onclick="showWasteDevelopment()">Waste Development</button>
+    <button type="button" onclick="showMixedDevelopment()">Mixed Development</button>
+    <button type="button" onclick="showBiodiversityGainSite()">A Biodiversity Gain Site</button>
+    <button type="button" onclick="showMineralWorking()">The winning and working of minerals or the use of land for mineral-working deposits</button>
+    <button type="button" onclick="showCommercialDevelopment()">Commercial development</button>
+    <button type="button" onclick="showSelfBuild()">Self-build and custom-build</button>
+    <button type="button" onclick="showHighSpeedRailway()">High-speed Railway Network</button>
+    <button id="resetButton" onclick="resetForm()">Reset</button>
+</div>
+
+<div id="Allrtue" class="hidden">
+    <label>Are ALL the following true:</label>
+    <ol>
+        <li>You are building 9 or fewer units</li>
+        <li>The total site is 0.5 ha or less</li>
+        <li>Every building is exempt</li>
+    </ol>
+    <button type="button" onclick="checkAllTrue()">Yes - all of the following are true</button>
+    <button type="button" onclick="skipToNextQuestion()">No</button>
+</div>
+
+<div id="householderExempt" class="hidden">
+    <label> GOOD NEWS - we can help prove that your application is EXEMPT.</label>
+    <p> Based on the information you have provided, our preliminary assessment is that your development may be exempt from having to comply with mandatory BNG obligation. Our tool can produce a bespoke BNG Exemption Report, which will allow you to demonstrate to your Local Planning Authority that you are exempt and have undertaken an assessment of your duties under Schedule 7A of the Town and Country Planning Act 1990 (as amended). </p>
+<p>Get a detailed BNG Exemption Report(£35)</p>
+ <p>(It only takes 20 minutes!)</p>
+ <p>Note that Local Planning Authorities (LPAS) can still request that an application complies with BNG. Complying
+with BNG also enhances the local environment and can boost the chances of getting planning permission.</p>
+     <a href="https://www.joesblooms.com/contact-us" target="_blank"><button id="getInTouchButton">Get in Touch</button></a>
+     <button id="resetButton" onclick="resetForm()">Reset</button>
+</div>
+
+<div id="biodiversityGainSiteExempt" class="hidden">
+    <label>Your application is EXEMPT.</label>
+    <p>Biodiversity Net Gain will not apply to Biodiversity Gain Sites. Article 7 of The Biodiversity Gain Requirements (Exemptions) Regulations 2024 states that "The biodiversity gain planning condition does not apply in relation to planning permission for development which is undertaken solely or mainly for the purpose of fulfilling, in whole or in part, the biodiversity gain planning condition which applies in relation to another development".</p>
+     <button id="resetButton" onclick="resetForm()">Reset</button>
+</div>
+
+<div id="commercialDevelopmentQuestion" class="hidden">
+    <label for="siteArea">What is the total site area?</label>
+    <button type="button" onclick="showMajorDevelopmentMessage()">1 hectare or more</button>
+    <button type="button" onclick="showUnder1HectorQuestion()">Under 1 ha</button>
+</div>
+
+<div id="under1HectorQuestion" class="hidden">
+    <label for="floorspace">What is the total floorspace of any commercial buildings (if any) that will be created by the development?</label>
+    <button type="button" onclick="showExemptUntilApril2024()">There are no commercial buildings</button>
+    <button type="button" onclick="showMajorDevelopmentMessage()">1000 square meters or more</button>
+    <button type="button" onclick="showExemptUntilApril2024()">Under 1000 square meters</button>
+    
+</div>
+
+<div id="otherQuestion" class="hidden">
+    <label for="siteAreaOther">What is the total site area?</label>
+    <button type="button" onclick="showMajorDevelopmentMessage()">1 hectare or more</button>
+    <button type="button" onclick="showUnder1HectorQuestion()">Under 1 ha</button>
+</div>
+
+<div id="exemptUntilApril2024Message" class="hidden">
+    <label>You MIGHT be eligible for an exemption, but we need to undertake a more detailed assessment of your site to see if you eligible for a de minimis exemption.</label>
+    <p>Based on the information you have provided, our preliminary assessment is that you may want to consider whether your development is eligible
+for a de minimis exemption. However, to determine whether your development is eligible, we need to work out how many habitats your
+development will "impact" as determined by the statutory biodiversity metric.</p>
+    <p>The good news is that we can undertake this assessment, online in under 45 minutes.<p/>
+    <p>Our tool can produce a bespoke BNG Exemption Report, which will allow you to demonstrate to your Local Planning Authority that you are
+exempt and have undertaken an assessment of your duties under Schedule 7A of the Town and Country Planning Act 1990 (as amended). The plan will include detailed reasons, a baseline and a post-development habitat map.<p/>
+    <p>Get a detailed BNG Exemption Report (£95)<p/>
+    <p>(Only pay if you are exempt!)<p/>
+    <p>Note that Local Planning Authorities (LPAS) can still request that an application complies with BNG. Complying with BNG also enhances the local environment and can boost the chances of getting planning permission.<p/>
+      <a href="https://www.joesblooms.com/contact-us" target="_blank"><button id="getInTouchButton">Get in Touch</button></a> 
+      <button id="resetButton" onclick="resetForm()">Reset</button>
+</div>
+</div>
+
+<div id="majorDevelopmentMessage" class="hidden">
+    <label>Our preliminary assessment is that you must comply with Biodiversity Net Gain.</label>
+    <p>Biodiversity Net Gain applies to all major sites from January 2024. According to article 2(1) of the Town and Country Planning (Development Management Procedure) (England) Order 2015, your development is classed as a major development.</p>
+    <p>Please use the Joe's Blooms Biodiversity Net Gain Tool to comply with the new requirements!</p>
+   <button onclick="window.location.href='https://www.joesblooms.com/joes-blooms-explore'">Use Biodiversity Net Gain Tool </button>
+   <button id="resetButton" onclick="resetForm()">Reset</button>
+</div>
+
+<div id="residentialMixedDevelopmentQuestion" class="hidden">
+    <label for="dwellinghouses">What number of dwellinghouses are you building?</label>
+    <button type="button" onclick="showSiteAreaQuestion()">9 or less</button>
+     <button type="button" onclick="showMajorDevelopmentMessage()">10 or more</button>
+    <button type="button" onclick="showUnknownQuestion()">Unknown</button>
+</div>
+
+<div id="siteAreaQuestion" class="hidden">
+    <label for="siteAreaDwellinghouses">What is the total site area?</label>
+    <button type="button" onclick="showMajorDevelopmentMessage()">1 hectare or more</button>
+    <button type="button" onclick="showUnder1HectorQuestion()">Under 1 ha</button>
+</div>
+
+<div id="floorspaceQuestion" class="hidden">
+    <label for="floorspaceSize">What is the total floorspace of the buildings that will be created by the development?</label>
+    <button type="button" onclick="showMajorDevelopmentMessage()">1000 square meters or more</button>
+    <button type="button" onclick="showExemptUntilApril2024()">Under 1000 square meters</button>
+    <button type="button" onclick="showExemptUntilApril2024()">There are no commercial buildings</button>
+</div>
+
+<div id="unknownQuestion" class="hidden">
+    <label for="unknownSiteArea">What is the total site area?</label>
+    <button type="button" onclick="show0_5HectaresMessage()">0.5 hectares or more</button>
+    <button type="button" onclick="showFloorspaceQuestion()">Under 0.5 ha</button>
+</div>
+
+<div id="0_5HectaresMessage" class="hidden">
+     <label>Our preliminary assessment is that you must comply with Biodiversity Net Gain.</label>
+    <p>Biodiversity Net Gain applies to all major sites from January 2024. According to article 2(1) of the Town and Country Planning (Development Management Procedure) (England) Order 2015, your development is classed as a major development.</p>
+    <p>Please use the Joe's Blooms Biodiversity Net Gain Tool to comply with the new requirements!</p>
+       <button onclick="window.location.href='https://www.joesblooms.com/joes-blooms-explore'">Use Biodiversity Net Gain Tool </button>
+    <button id="resetButton" onclick="resetForm()">Reset</button>
+</div>
+
+<div id="exemptMessage" class="hidden">
+    <label>Our preliminary assessment is that your application is EXEMPT.</label>
+    <p>Biodiversity Net Gain only applies in England. Schedule 7A of the Town and Country Planning Act 1990 states that only "grants of planning permission in England to be subject to a condition to secure that the biodiversity gain objective". You may wish to contact your LPA to see if they have specific biodiversity requirements that you are expected to comply with.</p>
+    <button id="resetButton" onclick="resetForm()">Reset</button>
+</div>
+</html>
